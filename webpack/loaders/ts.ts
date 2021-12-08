@@ -16,12 +16,3 @@ export const ts = {
     },
   },
 };
-
-// c ts-loader не завелось выскакивает ошибка
-/**
- * dist/ssr.js:26984
-const app = (0, express_1.default)();
-TypeError: (0 , express_1.default) is not a function
- * 
- * 
- */
