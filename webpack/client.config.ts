@@ -1,6 +1,6 @@
-import { Configuration } from "webpack";
+import { Configuration, DllReferencePlugin } from "webpack";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
-import { join } from "path";
+import { join, resolve } from "path";
 import { DIST_DIR, IS_DEV, SRC_DIR } from "./env";
 import { css } from "./loaders/css";
 import { ts } from "./loaders/ts";
@@ -22,7 +22,13 @@ export const clientConfig: Configuration = {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
     plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
   },
-  plugins: [new MiniCssExtractPlugin({ filename: "[name].css" })],
+  plugins: [
+    new DllReferencePlugin({
+      context: join(DIST_DIR, ".."),
+      manifest: join(DIST_DIR, "vendors", "vendors-manifest.json"),
+    }),
+    new MiniCssExtractPlugin({ filename: "[name].css" }),
+  ],
   devtool: "source-map",
   performance: {
     hints: IS_DEV ? false : "error",
