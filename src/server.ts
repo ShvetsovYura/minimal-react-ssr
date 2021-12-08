@@ -1,6 +1,6 @@
 import { resolve } from "path";
 import express, { Express, Request, Response, NextFunction } from "express";
-import { ssrHtmlRenderMiddleware } from "ssrHtmlRenderMiddleware";
+import { ssrHtmlRenderMiddleware } from "./ssrHtmlRenderMiddleware";
 import compression from "compression";
 
 const app: Express = express();
