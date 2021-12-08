@@ -1,4 +1,4 @@
-import { App } from "App";
+import { App } from "./App";
 import { renderToString } from "react-dom/server";
 import React from "react";
 import { Request, Response } from "express";
