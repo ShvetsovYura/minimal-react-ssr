@@ -1,0 +1,7 @@
+{
+  "presets": [
+    "@babel/preset-env", // без этого ругается на импорты Cannot use import statement outside a module
+    "@babel/preset-typescript", // без этого ругается на типы в конфигах и файлах
+    "@babel/preset-react" // без этого ругается на jsx
+  ]
+}
