@@ -1,5 +1,5 @@
     express - веб сервер
-    react 
+    react
     react-dom
 
     @babel/preset-env - без этого не работают import
@@ -21,3 +21,4 @@
     typescript
     webpack
     webpack-cli
+    compression - сжимает отдаваемое содержимое, включаем тока в деве, так как (наверно) в проде будет сжимать какой-ить nginx
