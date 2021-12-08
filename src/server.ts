@@ -7,10 +7,11 @@ const app: Express = express();
 
 if (process.env.NODE_ENV === "development") {
   app.use(compression());
-  app.use((req: Request, res: Response, next: NextFunction) => {
-    res.set("Cache-Control", "no-store");
-    next();
-  });
+  // Влад забраковал это
+  // app.use((req: Request, res: Response, next: NextFunction) => {
+  //   res.set("Cache-Control", "no-store");
+  //   next();
+  // });
 }
 
 app

@@ -3,6 +3,9 @@ import { renderToString } from "react-dom/server";
 import React from "react";
 import { Request, Response } from "express";
 
+import assets from "./assets.json";
+import vendorsAssets from "./vendors-assets.json";
+
 const ssrHtmlRenderMiddleware = (req: Request, res: Response) => {
   const rootJsx = <App />;
   const reactHtml = renderToString(rootJsx);
@@ -18,12 +21,12 @@ function getHtmlString(reactJsxString: string) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>So good</title>
-        <link href="/main.css" rel="stylesheet">
+        <link href="${assets.main.css}" rel="stylesheet">
     </head>
     <body>
         <div id="root">${reactJsxString}</div>
-         <script src="/vendors/vendors.js"></script>
-        <script src="/main.js"></script>
+         <script src="/vendors/${vendorsAssets.vendors.js}"></script>
+        <script src="${assets.main.js}"></script>
     </body>
   </html>
 `;
