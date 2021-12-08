@@ -22,6 +22,7 @@ function getHtmlString(reactJsxString: string) {
     </head>
     <body>
         <div id="root">${reactJsxString}</div>
+         <script src="/vendors/vendors.js"></script>
         <script src="/main.js"></script>
     </body>
   </html>
