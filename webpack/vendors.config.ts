@@ -12,15 +12,14 @@ export default {
     vendors: VENDORS,
   },
   output: {
-    library: "[name]_[fullhash]",
+    library: "[name]",
     path: join(DIST_DIR, "vendors"),
-    filename: "[name]_[fullhash].js",
+    filename: "[name].js",
   },
   plugins: [
     new DllPlugin({
       path: join(DIST_DIR, "vendors", "vendors-manifest.json"),
-      name: "[name]_[fullhash]",
+      name: "[name]",
     }),
-    new MiniCssExtractPlugin({ filename: "[name]_[fullhash].css" }),
   ],
 };
